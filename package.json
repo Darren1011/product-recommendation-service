@@ -1,15 +1,15 @@
 {
-  "name": "product-recommendation-service",
+  "name": "product-recommendation",
   "version": "0.1.0",
   "private": true,
-  "description": "FastAPI prototype for product recommendations backed by JSON files.",
+  "description": "Monorepo for a JSON-backed product recommendation prototype.",
   "scripts": {
-    "install": "python -m pip install -r requirements.txt",
-    "dev": "python -m uvicorn app.main:app --host 0.0.0.0 --port 8123 --reload",
-    "start": "python -m uvicorn app.main:app --host 0.0.0.0 --port 8123",
-    "test": "python -m pytest"
-  },
-  "engines": {
-    "python": ">=3.11"
+    "install:services": "npm --prefix services run install",
+    "install:web": "npm --prefix web install",
+    "dev:services": "npm --prefix services run dev",
+    "dev:web": "npm --prefix web run dev",
+    "test:services": "npm --prefix services run test",
+    "tsc:web": "npm --prefix web run tsc",
+    "build:web": "npm --prefix web run build"
   }
 }

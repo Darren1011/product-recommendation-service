@@ -1,8 +1,13 @@
-# Product Recommendation Service
+# Product Recommendation
 
-Personal FastAPI and LangGraph prototype for enterprise-style product recommendations.
+Personal monorepo for the JSON-backed product recommendation prototype.
 
-This repo is intentionally standalone:
+## Structure
+
+- `services/` - FastAPI and LangGraph backend using local JSON files
+- `web/` - Next.js recommendation workspace UI
+
+## Constraints
 
 - No company data
 - No OpenAI API requirement
@@ -12,9 +17,28 @@ This repo is intentionally standalone:
 
 ## Run Locally
 
+Install backend dependencies:
+
 ```powershell
-python -m pip install -r requirements.txt
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8123 --reload
+npm run install:services
 ```
 
-The API exposes `/chat/message`, `/workflow/status`, `/workflow/result`, and recommendation context endpoints over local JSON files.
+Install web dependencies:
+
+```powershell
+npm run install:web
+```
+
+Start the backend:
+
+```powershell
+npm run dev:services
+```
+
+Start the web app in another terminal:
+
+```powershell
+npm run dev:web
+```
+
+Open `http://127.0.0.1:3000`. The web app calls the backend on port `8123`.
