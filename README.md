@@ -2,6 +2,12 @@
 
 Personal monorepo for the JSON-backed product recommendation prototype.
 
+## Demo
+
+<video src="docs/demo/product-recommendation-demo.mp4" controls width="100%"></video>
+
+[Open the MP4 demo](docs/demo/product-recommendation-demo.mp4)
+
 ## Structure
 
 - `services/` - FastAPI and LangGraph backend using local JSON files
