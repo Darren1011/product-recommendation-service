@@ -71,7 +71,7 @@ class Product(BaseModel):
 class ChatRequest(BaseModel):
     """User message and optional context for a recommendation request."""
 
-    input_text: str = Field(..., min_length=1, max_length=2000)
+    input_text: str = Field(default="", max_length=2000)
     chat_id: str | None = None
     account_id: str | None = None
     opportunity_id: str | None = None

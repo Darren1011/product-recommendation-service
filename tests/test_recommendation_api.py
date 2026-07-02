@@ -26,7 +26,7 @@ def test_recommender_prioritizes_workstation_request() -> None:
     assert "graphics" in results[0].matched_requirements
 
 
-def test_chat_message_returns_workflow_result() -> None:
+def test_chat_message_starts_workflow_status() -> None:
     # Send the same request shape the frontend uses.
     response = client.post(
         "/chat/message",
@@ -37,15 +37,33 @@ def test_chat_message_returns_workflow_result() -> None:
         },
     )
 
-    # Fetch the workflow result using the returned id.
+    # Fetch the workflow status using the returned id.
     payload = response.json()
-    result_response = client.get(
-        "/workflow/result",
+    status_response = client.get(
+        "/workflow/status",
         params={"workflow_id": payload["workflow_id"]},
     )
 
-    # Verify the chat and workflow contracts are connected.
+    # Verify the chat endpoint starts an observable workflow.
     assert response.status_code == 200
     assert payload["intent"] == "search_auto"
-    assert result_response.status_code == 200
-    assert len(result_response.json()["result"]["recommendations"]) == 3
+    assert status_response.status_code == 200
+    assert len(status_response.json()["steps"]) == 4
+
+
+def test_context_only_request_can_recommend() -> None:
+    # Verify empty input is accepted by the API contract.
+    response = client.post(
+        "/chat/message",
+        json={
+            "input_text": "",
+            "account_id": "acct-northstar-health",
+            "opportunity_id": "opp-clinician-refresh",
+        },
+    )
+
+    # Confirm a workflow is still started from account and opportunity context.
+    payload = response.json()
+    assert response.status_code == 200
+    assert payload["workflow_id"]
+    assert "selected context" in payload["content"]

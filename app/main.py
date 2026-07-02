@@ -12,7 +12,6 @@ from app.models import (
     Opportunity,
     Product,
     RenameThreadRequest,
-    WorkflowResult,
     WorkflowResultEnvelope,
     WorkflowStatus,
 )
@@ -76,26 +75,27 @@ def list_opportunities(account_id: str | None = Query(default=None)) -> list[Opp
 
 @app.post("/chat/message", response_model=ChatResponse)
 def send_chat_message(request: ChatRequest) -> ChatResponse:
-    """Run a recommendation workflow and store the chat exchange."""
+    """Start a recommendation workflow and store the chat exchange."""
     # Resolve optional account and opportunity context before scoring.
     account = _resolve_account(request.account_id)
     opportunity = _resolve_opportunity(request.opportunity_id, account)
 
-    # Run the deterministic JSON-backed workflow synchronously.
-    workflow_result = workflow_service.run(
+    # Start the deterministic JSON-backed workflow in the background.
+    workflow_id = workflow_service.start(
         query=request.input_text,
         products=catalog_store.products,
         account=account,
         opportunity=opportunity,
+        simulate_delay=True,
     )
 
-    # Store a chat exchange that references the completed workflow.
-    assistant_text = _build_assistant_text(workflow_result)
+    # Store a chat exchange that references the running workflow.
+    assistant_text = _build_workflow_started_text(request.input_text)
     chat_id, message_id, chat_name = chat_service.add_exchange(
         request.chat_id,
-        request.input_text,
+        request.input_text or "Use selected account/opportunity context.",
         assistant_text,
-        workflow_result.workflow_id,
+        workflow_id,
     )
 
     # Return the compact response expected by the frontend chat surface.
@@ -105,7 +105,7 @@ def send_chat_message(request: ChatRequest) -> ChatResponse:
         content=assistant_text,
         intent="search_auto",
         chat_name=chat_name,
-        workflow_id=workflow_result.workflow_id,
+        workflow_id=workflow_id,
     )
 
 
@@ -200,12 +200,10 @@ def _resolve_opportunity(
     return opportunity
 
 
-# Create a conversational assistant message from the completed result.
-def _build_assistant_text(result: WorkflowResult) -> str:
-    count = len(result.recommendations)
-    top_name = result.recommendations[0].product.name if result.recommendations else "no product"
+# Create a conversational assistant message for a running workflow.
+def _build_workflow_started_text(query: str) -> str:
+    query_source = "your request" if query.strip() else "the selected context"
     return (
-        f"I found {count} recommendation options. "
-        f"The strongest match is {top_name}. "
-        f"Open the recommendation panel for scoring details."
+        f"I started a recommendation workflow using {query_source}. "
+        "The recommendation panel will update as each stage completes."
     )
