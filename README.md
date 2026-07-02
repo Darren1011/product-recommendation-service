@@ -4,9 +4,9 @@ Personal monorepo for the JSON-backed product recommendation prototype.
 
 ## Demo
 
-<video src="docs/demo/product-recommendation-demo.mp4" controls width="100%"></video>
+[![Product recommendation workflow demo](docs/demo/product-recommendation-demo.gif)](docs/demo/product-recommendation-demo.mp4)
 
-[Open the MP4 demo](docs/demo/product-recommendation-demo.mp4)
+[Open the full MP4 demo](docs/demo/product-recommendation-demo.mp4)
 
 ## Structure
 
