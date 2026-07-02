@@ -1,0 +1,170 @@
+[
+  {
+    "id": "AB14-PRO",
+    "name": "ApexBook 14 Pro",
+    "category": "Laptop",
+    "family": "ApexBook",
+    "form_factor": "Clamshell",
+    "summary": "Compact enterprise laptop for mobile knowledge workers.",
+    "personas": ["executive", "consultant", "clinician"],
+    "use_cases": ["portable", "battery", "security", "video", "docking"],
+    "tags": ["lightweight", "premium", "secure", "hybrid work"],
+    "price_usd": 1499,
+    "image_url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80",
+    "specs": {
+      "processor": "Core Ultra 7",
+      "memory_gb": 32,
+      "storage_gb": 1024,
+      "gpu": "Integrated AI Graphics",
+      "display": "14 inch 2.8K anti-glare",
+      "battery_hours": 14,
+      "weight_kg": 1.18,
+      "os": "Windows 11 Pro"
+    },
+    "inventory": {
+      "status": "In stock",
+      "countries": ["United States", "Canada"],
+      "quantity": 128
+    }
+  },
+  {
+    "id": "AB13-FLEX",
+    "name": "ApexBook 13 Flex",
+    "category": "Laptop",
+    "family": "ApexBook",
+    "form_factor": "Convertible",
+    "summary": "Touch-enabled convertible for field teams, care teams, and frequent note taking.",
+    "personas": ["clinician", "field worker", "educator"],
+    "use_cases": ["portable", "battery", "touch", "tablet mode", "security"],
+    "tags": ["2-in-1", "lightweight", "touch", "secure"],
+    "price_usd": 1299,
+    "image_url": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80",
+    "specs": {
+      "processor": "Core Ultra 5",
+      "memory_gb": 16,
+      "storage_gb": 512,
+      "gpu": "Integrated AI Graphics",
+      "display": "13.3 inch touch",
+      "battery_hours": 15,
+      "weight_kg": 1.09,
+      "os": "Windows 11 Pro"
+    },
+    "inventory": {
+      "status": "In stock",
+      "countries": ["United States"],
+      "quantity": 84
+    }
+  },
+  {
+    "id": "FORGE16-MAX",
+    "name": "ForgeStation Mobile 16",
+    "category": "Mobile Workstation",
+    "family": "ForgeStation",
+    "form_factor": "Clamshell",
+    "summary": "Portable workstation for CAD, rendering, and data-heavy technical workflows.",
+    "personas": ["engineer", "architect", "creator"],
+    "use_cases": ["workstation", "graphics", "performance", "memory", "cad", "rendering"],
+    "tags": ["discrete graphics", "high memory", "performance", "professional"],
+    "price_usd": 2499,
+    "image_url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+    "specs": {
+      "processor": "Core Ultra 9",
+      "memory_gb": 64,
+      "storage_gb": 2048,
+      "gpu": "RTX 3000 Ada-class",
+      "display": "16 inch 4K color-calibrated",
+      "battery_hours": 8,
+      "weight_kg": 2.15,
+      "os": "Windows 11 Pro"
+    },
+    "inventory": {
+      "status": "Limited",
+      "countries": ["United States", "Canada"],
+      "quantity": 24
+    }
+  },
+  {
+    "id": "NODE-MINI",
+    "name": "NodeDesk Mini",
+    "category": "Desktop",
+    "family": "NodeDesk",
+    "form_factor": "Tiny Desktop",
+    "summary": "Space-saving desktop for branch, lab, and shared-office environments.",
+    "personas": ["branch associate", "student", "operations"],
+    "use_cases": ["budget", "manageability", "docking", "classroom", "video"],
+    "tags": ["compact", "managed", "quiet", "budget"],
+    "price_usd": 849,
+    "image_url": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=900&q=80",
+    "specs": {
+      "processor": "Core i5",
+      "memory_gb": 16,
+      "storage_gb": 512,
+      "gpu": "Integrated Graphics",
+      "display": "External monitor required",
+      "battery_hours": 0,
+      "weight_kg": 1.35,
+      "os": "Windows 11 Pro"
+    },
+    "inventory": {
+      "status": "In stock",
+      "countries": ["United States", "Canada"],
+      "quantity": 210
+    }
+  },
+  {
+    "id": "EDGE14-ESS",
+    "name": "EdgeBook 14 Essential",
+    "category": "Laptop",
+    "family": "EdgeBook",
+    "form_factor": "Clamshell",
+    "summary": "Cost-conscious business laptop for everyday productivity and shared programs.",
+    "personas": ["student", "office worker", "frontline worker"],
+    "use_cases": ["budget", "classroom", "durable", "manageability", "video"],
+    "tags": ["affordable", "durable", "standardized", "fleet"],
+    "price_usd": 799,
+    "image_url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=900&q=80",
+    "specs": {
+      "processor": "Core i5",
+      "memory_gb": 16,
+      "storage_gb": 512,
+      "gpu": "Integrated Graphics",
+      "display": "14 inch FHD",
+      "battery_hours": 10,
+      "weight_kg": 1.45,
+      "os": "Windows 11 Pro"
+    },
+    "inventory": {
+      "status": "In stock",
+      "countries": ["United States"],
+      "quantity": 340
+    }
+  },
+  {
+    "id": "FORGE-TOWER",
+    "name": "ForgeStation Tower",
+    "category": "Desktop Workstation",
+    "family": "ForgeStation",
+    "form_factor": "Tower",
+    "summary": "Expandable desktop workstation for demanding local compute and design teams.",
+    "personas": ["engineer", "data analyst", "creator"],
+    "use_cases": ["workstation", "graphics", "performance", "memory", "ai", "rendering"],
+    "tags": ["expandable", "discrete graphics", "high memory", "professional"],
+    "price_usd": 2899,
+    "image_url": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80",
+    "specs": {
+      "processor": "Xeon-class W",
+      "memory_gb": 128,
+      "storage_gb": 4096,
+      "gpu": "RTX 4500 Ada-class",
+      "display": "External monitor required",
+      "battery_hours": 0,
+      "weight_kg": 12.4,
+      "os": "Windows 11 Pro"
+    },
+    "inventory": {
+      "status": "Build ready",
+      "countries": ["United States", "Canada"],
+      "quantity": 42
+    }
+  }
+]

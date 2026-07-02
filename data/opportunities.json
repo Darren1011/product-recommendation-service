@@ -1,0 +1,34 @@
+[
+  {
+    "id": "opp-clinician-refresh",
+    "account_id": "acct-northstar-health",
+    "name": "Clinician mobile device refresh",
+    "stage": "Discovery",
+    "summary": "Replace aging clinician laptops with secure, lightweight systems for exam rooms and roaming care teams.",
+    "priority_requirements": ["portable", "battery", "security", "touch"]
+  },
+  {
+    "id": "opp-branch-modernization",
+    "account_id": "acct-urban-bank",
+    "name": "Branch productivity modernization",
+    "stage": "Proposal",
+    "summary": "Standardize branch office devices with strong manageability, docking, and video-call readiness.",
+    "priority_requirements": ["security", "manageability", "video", "docking"]
+  },
+  {
+    "id": "opp-render-farm-edge",
+    "account_id": "acct-vertex-design",
+    "name": "Mobile workstation pilot",
+    "stage": "Technical Review",
+    "summary": "Evaluate portable workstations for architects who need local rendering and CAD performance.",
+    "priority_requirements": ["workstation", "graphics", "performance", "memory"]
+  },
+  {
+    "id": "opp-student-lab",
+    "account_id": "acct-evergreen-schools",
+    "name": "Student lab replacement",
+    "stage": "Qualification",
+    "summary": "Refresh computer lab systems with durable low-maintenance devices for shared student usage.",
+    "priority_requirements": ["durable", "budget", "classroom", "manageability"]
+  }
+]

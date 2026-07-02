@@ -1,0 +1,15 @@
+{
+  "name": "product-recommendation-service",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FastAPI prototype for product recommendations backed by JSON files.",
+  "scripts": {
+    "install": "python -m pip install -r requirements.txt",
+    "dev": "python -m uvicorn app.main:app --host 0.0.0.0 --port 8123 --reload",
+    "start": "python -m uvicorn app.main:app --host 0.0.0.0 --port 8123",
+    "test": "python -m pytest"
+  },
+  "engines": {
+    "python": ">=3.11"
+  }
+}

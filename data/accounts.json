@@ -1,0 +1,34 @@
+[
+  {
+    "id": "acct-northstar-health",
+    "name": "Northstar Health Group",
+    "industry": "Healthcare",
+    "country": "United States",
+    "segment": "Enterprise",
+    "employee_count": 7800
+  },
+  {
+    "id": "acct-urban-bank",
+    "name": "UrbanTrust Bank",
+    "industry": "Financial Services",
+    "country": "United States",
+    "segment": "Enterprise",
+    "employee_count": 12200
+  },
+  {
+    "id": "acct-vertex-design",
+    "name": "Vertex Design Studio",
+    "industry": "Architecture",
+    "country": "Canada",
+    "segment": "Mid Market",
+    "employee_count": 640
+  },
+  {
+    "id": "acct-evergreen-schools",
+    "name": "Evergreen School District",
+    "industry": "Education",
+    "country": "United States",
+    "segment": "Public Sector",
+    "employee_count": 3100
+  }
+]
